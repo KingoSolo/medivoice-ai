@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Mic, AlertTriangle, RefreshCw } from 'lucide-react';
+import { Mic, AlertTriangle, RefreshCw, ArrowLeft } from 'lucide-react';
 import { useVoiceTriage } from '../hooks/UseVoiceTriage';
 import { LANGUAGES, IDLE_INSTRUCTIONS, LISTENING_TEXT } from '../utils/LanguageConfig';
 import TriageCard from '../components/TriageCard';
@@ -38,9 +38,14 @@ export default function AppPage() {
     <div className="min-h-screen bg-slate-900 text-white flex flex-col">
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-slate-800">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl">🏥</span>
-          <span className="font-bold text-lg">MediVoice AI</span>
+        <div className="flex items-center gap-3">
+          <Link to="/" className="text-slate-400 hover:text-white transition-colors p-1 -ml-1">
+            <ArrowLeft className="w-5 h-5" />
+          </Link>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🏥</span>
+            <span className="font-bold text-lg">MediVoice AI</span>
+          </div>
         </div>
         <Link to="/about" className="text-slate-400 hover:text-white text-sm transition-colors">
           About
